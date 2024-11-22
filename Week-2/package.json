@@ -1,0 +1,12 @@
+{
+    "name": "sit725-2021-t2-prac",
+    "version": "1.0.0",
+    "description": "sit 725 T2 week 2 prac",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.21.1"
+    }
+}
