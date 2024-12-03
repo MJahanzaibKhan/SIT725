@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Hospital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Hospital</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>Book an Appointment</h3>
+        <form>
+            <div class="input-field">
+                <input type="text" id="name" required>
+                <label for="name">Full Name</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="phone" required>
+                <label for="phone">Phone Number</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="date" class="datepicker" required>
+                <label for="date">Preferred Date</label>
+            </div>
+            <button class="btn blue darken-2">Submit</button>
+        </form>
+    </div>
+
+    <footer class="blue darken-3 white-text center-align">
+        <p>&copy; 2024 Hospital. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elems = document.querySelectorAll('.datepicker');
+            M.Datepicker.init(elems);
+        });
+    </script>
+</body>
+
+</html>
