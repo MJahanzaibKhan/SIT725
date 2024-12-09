@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="#" class="brand-logo center">Hospital</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="appointment.html">Appointments</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h3>Book an Appointment</h3>
+    <form id="appointmentForm" method="POST" action="/api/appointments">
+      <div class="input-field">
+        <input id="name" type="text" name="name" required>
+        <label for="name">Your Name</label>
+      </div>
+      <div class="input-field">
+        <input id="email" type="email" name="email" required>
+        <label for="email">Your Email</label>
+      </div>
+      <div class="input-field">
+        <input id="date" type="date" name="date" required>
+        <label for="date">Appointment Date</label>
+      </div>
+      <button class="btn waves-effect waves-light teal" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <p>© 2024 Hospital. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+
