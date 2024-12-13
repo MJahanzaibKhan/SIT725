@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Appointment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="/" class="brand-logo center">Hospital Management</a>
+      <ul class="right">
+        <li><a href="/appointment/create-appointment">Create Appointment</a></li>
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/doctors">Doctors</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h3>Create Appointment</h3>
+    <form action="/create-appointment" method="POST">
+      <div class="input-field">
+        <input type="text" name="patientName" id="patientName" required>
+        <label for="patientName">Patient Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text" name="doctorId" id="doctorId" required>
+        <label for="doctorId">Doctor ID</label>
+      </div>
+
+      <div class="input-field">
+        <input type="datetime-local" name="appointmentDate" id="appointmentDate" required>
+        <label for="appointmentDate">Appointment Date</label>
+      </div>
+
+      <div class="input-field">
+        <textarea name="reason" id="reason" class="materialize-textarea" required></textarea>
+        <label for="reason">Reason for Appointment</label>
+      </div>
+
+      <button type="submit" class="btn teal">Create Appointment</button>
+    </form>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <p>© 2024 Hospital Management System, All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
