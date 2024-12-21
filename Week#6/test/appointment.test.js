@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
-const Appointment = require("../models/Appointment"); // Path to your model file
+const Appointment = require("../models/Appointment");
 
 describe("Appointment Model Tests", () => {
   beforeAll(() => {
-    // Connect to an in-memory MongoDB database before tests
-    const url = "mongodb://127.0.0.1/appointment_test"; // Adjust URL as needed
+    
+    const url = "mongodb://127.0.0.1/appointment_test";
     mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
   });
 
   afterAll(async () => {
-    // Close the connection after tests are finished
+    
     await mongoose.connection.close();
   });
 
-  // Test Case 1: Valid appointment creation
+  
   it("should create a valid appointment", async () => {
     const appointmentData = {
       patientName: "John Doe",
@@ -25,17 +25,17 @@ describe("Appointment Model Tests", () => {
     const appointment = new Appointment(appointmentData);
     await appointment.save();
 
-    // Assertions
+    
     expect(appointment.patientName).toBe("John Doe");
     expect(appointment.doctorId).toBeDefined();
     expect(appointment.appointmentDate).toEqual(
       new Date("2024-12-25T10:00:00Z")
     );
     expect(appointment.reason).toBe("Check-up");
-    expect(appointment).toHaveProperty("createdAt"); // check timestamp
+    expect(appointment).toHaveProperty("createdAt"); 
   });
 
-  // Test Case 2: Missing required fields (patientName)
+  
   it("should throw validation error if patientName is missing", async () => {
     const appointmentData = {
       doctorId: new mongoose.Types.ObjectId(),
@@ -45,7 +45,7 @@ describe("Appointment Model Tests", () => {
 
     const appointment = new Appointment(appointmentData);
 
-    // Use `expect` to check for validation errors
+    
     let error;
     try {
       await appointment.save();
@@ -53,10 +53,10 @@ describe("Appointment Model Tests", () => {
       error = err;
     }
     expect(error).toBeDefined();
-    expect(error.errors.patientName).toBeDefined(); // Ensure the validation error is for the patientName field
+    expect(error.errors.patientName).toBeDefined(); 
   });
 
-  // Test Case 3: Missing required fields (doctorId)
+  
   it("should throw validation error if doctorId is missing", async () => {
     const appointmentData = {
       patientName: "John Doe",
@@ -74,15 +74,15 @@ describe("Appointment Model Tests", () => {
     }
 
     expect(error).toBeDefined();
-    expect(error.errors.doctorId).toBeDefined(); // Ensure validation error is for doctorId
+    expect(error.errors.doctorId).toBeDefined(); 
   });
 
-  // Test Case 4: Invalid date format for appointmentDate
+  
   it("should throw validation error for invalid appointmentDate format", async () => {
     const appointmentData = {
       patientName: "John Doe",
       doctorId: new mongoose.Types.ObjectId(),
-      appointmentDate: "invalid-date", // Invalid date
+      appointmentDate: "invalid-date", 
       reason: "Check-up",
     };
 
@@ -96,10 +96,10 @@ describe("Appointment Model Tests", () => {
     }
 
     expect(error).toBeDefined();
-    expect(error.errors.appointmentDate).toBeDefined(); // Ensure validation error for invalid date format
+    expect(error.errors.appointmentDate).toBeDefined(); 
   });
 
-  // Test Case 5: Valid data with optional fields
+  
   it("should create an appointment with valid data and have timestamps", async () => {
     const appointmentData = {
       patientName: "Jane Doe",
