@@ -1,0 +1,27 @@
+/* Add this to your main stylesheet (e.g., style.css) */
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #004d40;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* .container {
+  margin-top: 30px;
+} */

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+
+  <!-- Linking Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav-wrapper teal">
+    <div class="container">
+      <a href="/" class="brand-logo">Hospital</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/appointment">Book Appointment</a></li>
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/doctors">Doctors</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="/appointment">Book Appointment</a></li>
+    <li><a href="/feedback">Feedback</a></li>
+    <li><a href="/doctors">Doctors</a></li>
+  </ul>
+
+  <!-- Main Content Section -->
+  <div class="container">
+    <h3 class="center-align">Welcome to Our Hospital</h3>
+    <p class="center-align">We provide top-notch healthcare services. Book appointments, view doctors, and share
+      feedback.</p>
+
+    <!-- Call to Action Button -->
+    <div class="center-align">
+      <a href="/appointment" class="btn-large waves-effect waves-light teal lighten-1">Book an Appointment</a>
+    </div>
+
+    <!-- Our Services Section -->
+    <div class="section">
+      <h4 class="center-align">Our Services</h4>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/consultation.jpeg" alt="Consultation">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Consultation</span>
+              <p>Our experienced doctors provide consultations in various specialties to ensure the best care.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/surgery.jpeg" alt="Surgery">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Surgery</span>
+              <p>We offer state-of-the-art surgery services with experienced surgeons ensuring a smooth recovery.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/emergency.jpeg" alt="Emergency Care">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Emergency Care</span>
+              <p>Our 24/7 emergency services are here to provide urgent care in any medical crisis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="section grey lighten-4">
+      <h4 class="center-align">What Our Patients Say</h4>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card-panel teal white-text">
+            <p>"The doctors were very kind and attentive. The treatment was excellent and I felt very comfortable."</p>
+            <p><b>- John Doe</b></p>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card-panel teal white-text">
+            <p>"I was impressed by the quick and efficient service. Highly recommended for anyone in need of medical
+              attention."</p>
+            <p><b>- Sarah Lee</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Doctors Section -->
+    <div class="section">
+      <h4 class="center-align">Our Featured Doctors</h4>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/dr3.jpeg" alt="Doctor 1">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Dr. Rachel Bacon</span>
+              <p>Specialty: Cardiologist</p>
+              <p>Dr. Rachel Bacon is a leading cardiologist with over 20 years of experience in treating heart conditions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/dr1.jpeg" alt="Doctor 2">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Dr. Emily Johnson</span>
+              <p>Specialty: Pediatrics</p>
+              <p>Dr. Emily Johnson is an expert in treating bone and joint issues and offers personalized care for each patient.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="../images/dr2.jpg" alt="Doctor 3">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Dr. Michael Lee</span>
+              <p>Specialty: Neurologist</p>
+              <p>Dr. Michael Lee has a compassionate approach towards treating children and their health needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <p class="white-text center-align">© 2024 Hospital Management System, All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Linking Materialize JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Initialize Materialize JS components -->
+  <script>
+    $(document).ready(function () {
+      $(".sidenav").sidenav();
+    });
+  </script>
+
+</body>
+
+</html>

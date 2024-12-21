@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ensure images are responsive and uniform */
+    .card-image img {
+      height: 200px;
+      object-fit: fill;
+    }
+
+    .doctor-card {
+      height: 100%;
+    }
+
+    .card-content {
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="nav-wrapper teal">
+    <div class="container">
+      <a href="/" class="brand-logo">Hospital</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/appointment">Book Appointment</a></li>
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/doctors">Doctors</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="/appointment">Book Appointment</a></li>
+    <li><a href="/feedback">Feedback</a></li>
+    <li><a href="/doctors">Doctors</a></li>
+  </ul>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h3 class="center-align">Our Doctors</h3>
+    <p class="center-align">Meet our experienced and dedicated team of healthcare professionals.</p>
+
+    <div class="row">
+      <!-- Doctor Card 1 -->
+      <div class="col s12 m6 l4">
+        <div class="card doctor-card">
+          <div class="card-image">
+            <img src="../images/dr3.jpeg" alt="Dr. Rachel Bacon">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Dr. Rachel Bacon</span>
+            <p>Specialist: Cardiologist</p>
+            <p>Experience: 10+ Years</p>
+            <!-- Rating System -->
+            <p><strong>Rating:</strong>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star_half</span>
+              <span class="material-icons">star_border</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor Card 2 -->
+      <div class="col s12 m6 l4">
+        <div class="card doctor-card">
+          <div class="card-image">
+            <img src="../images/dr1.jpeg" alt="Dr. Emily Davis">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Dr. Emily Davis</span>
+            <p>Specialist: Pediatrician</p>
+            <p>Experience: 8+ Years</p>
+            <!-- Rating System -->
+            <p><strong>Rating:</strong>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star_half</span>
+              <span class="material-icons">star_border</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor Card 3 -->
+      <div class="col s12 m6 l4">
+        <div class="card doctor-card">
+          <div class="card-image">
+            <img src="../images/dr2.jpg" alt="Dr. Michael Lee">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Dr. Michael Lee</span>
+            <p>Specialist: Neurologist</p>
+            <p>Experience: 12+ Years</p>
+            <!-- Rating System -->
+            <p><strong>Rating:</strong>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star</span>
+              <span class="material-icons">star_border</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <p>© 2024 Hospital Management System. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Make sure the body and html take up the full height of the viewport */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Prevent scrolling by ensuring no content overflows */
+        body {
+            overflow: hidden;
+        }
+
+        /* Container for the main content */
+        .main-content {
+            flex: 1;
+            /* Allows the content to grow and fill the available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Sticky footer */
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-wrapper teal">
+        <div class="container">
+            <a href="/" class="brand-logo">Hospital</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/appointment">Book Appointment</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/doctors">Doctors</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="/appointment">Book Appointment</a></li>
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/doctors">Doctors</a></li>
+    </ul>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="container section">
+            <h3 class="center-align">Feedback</h3>
+            <p class="center-align">We value your feedback. Please share your experience with us!</p>
+            <div class="row">
+                <form action="/feedback" method="POST" class="col s12">
+                    <div class="input-field">
+                        <input type="text" name="name" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea name="message" id="message" class="materialize-textarea" required></textarea>
+                        <label for="message">Your Feedback</label>
+                    </div>
+                    <div class="input-field">
+                        <select name="rating" id="rating" required>
+                            <option value="" disabled selected>Rate Your Experience</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Fair</option>
+                            <option value="3">3 - Good</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                        <label for="rating">Rating</label>
+                    </div>
+                    <div class="center">
+                        <button type="submit" class="btn-large waves-effect waves-light teal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <p>© 2024 Hospital Management System. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialize Materialize Components
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Sidenav
+            const sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+
+            // Form Select Dropdown
+            const selectElems = document.querySelectorAll('select');
+            M.FormSelect.init(selectElems);
+        });
+    </script>
+</body>
+
+</html>
