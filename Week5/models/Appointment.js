@@ -2,21 +2,21 @@ const mongoose = require("mongoose");
 
 const appointmentSchema = new mongoose.Schema(
   {
-    patientName: {
+    name: {
       type: String,
       required: true,
     },
-    doctorId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Doctor",
+    email: {
+      type: String,
+      required: true,
+      match: /.+\@.+\..+/,
+    },
+    phone: {
+      type: String,
       required: true,
     },
     appointmentDate: {
       type: Date,
-      required: true,
-    },
-    reason: {
-      type: String,
       required: true,
     },
   },

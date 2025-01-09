@@ -37,25 +37,25 @@
       <h3 class="center-align">Book Appointment</h3>
       <p class="center-align">Schedule an appointment with our expert doctors.</p>
       <div class="row">
-        <form action="/appointment" method="POST" class="col s12">
+        <form action="/appointment" method="POST">
           <div class="input-field">
             <input type="text" id="name" name="name" required>
-            <label for="name">Your Name</label>
+            <label for="name">Name</label>
           </div>
           <div class="input-field">
             <input type="email" id="email" name="email" required>
-            <label for="email">Your Email</label>
+            <label for="email">Email</label>
           </div>
           <div class="input-field">
             <input type="text" id="phone" name="phone" required>
-            <label for="phone">Your Phone Number</label>
+            <label for="phone">Phone</label>
           </div>
           <div class="input-field">
-            <input type="date" id="date" name="date" required>
-            <label for="date">Preferred Date</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+            <label for="appointmentDate">Preferred Date</label>
           </div>
           <div class="center">
-            <button type="submit" class="btn-large teal waves-effect waves-light">Submit</button>
+            <button type="submit" class="btn teal waves-effect waves-light">Submit</button>
           </div>
         </form>
       </div>

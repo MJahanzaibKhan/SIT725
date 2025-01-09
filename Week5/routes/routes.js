@@ -13,6 +13,7 @@ router.get("/", (req, res) =>
 
 // Appointment Routes
 router.get("/appointment", appointmentController.renderAppointmentPage);
+// Handle appointment creation
 router.post("/appointment", appointmentController.createAppointment);
 
 // Feedback Routes

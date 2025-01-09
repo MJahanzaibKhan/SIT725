@@ -1,40 +1,42 @@
 const Appointment = require("../models/Appointment");
+const path = require("path");
 
-// Controller function to create an appointment
+// Create an appointment
 exports.createAppointment = async (req, res) => {
   try {
-    const { patientName, doctorId, appointmentDate, reason } = req.body;
+    const { name, email, phone, appointmentDate } = req.body;
 
-    // Validate data
-    if (!patientName || !doctorId || !appointmentDate || !reason) {
+    // Validate input
+    if (!name || !email || !phone || !appointmentDate) {
       return res.status(400).json({ message: "All fields are required." });
     }
 
-    // Create new appointment
+    // Create a new appointment
     const newAppointment = new Appointment({
-      patientName,
-      doctorId,
+      name,
+      email,
+      phone,
       appointmentDate,
-      reason,
     });
 
-    // Save the appointment in the database
+    // Save to the database
     await newAppointment.save();
 
-    // Send success response
-    res
-      .status(201)
-      .json({
-        message: "Appointment created successfully",
-        appointment: newAppointment,
-      });
+    // Emit real-time event
+    req.io.emit("newAppointment", {
+      message: "A new appointment has been created!",
+      appointment: newAppointment,
+    });
+
+    // Redirect to home page
+    res.redirect("/");
   } catch (error) {
     console.error("Error creating appointment:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
 
-// Controller function to render the appointment creation page (if necessary)
+// Render the appointment creation page (optional if using a templating engine)
 exports.renderAppointmentPage = (req, res) => {
-  res.render("appointment"); // Assuming you're using a template engine (e.g., EJS)
+  res.sendFile(path.join(__dirname, "../public/html/appointment.html"));
 };

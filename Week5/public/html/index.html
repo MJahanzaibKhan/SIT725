@@ -120,7 +120,8 @@
             <div class="card-content">
               <span class="card-title">Dr. Rachel Bacon</span>
               <p>Specialty: Cardiologist</p>
-              <p>Dr. Rachel Bacon is a leading cardiologist with over 20 years of experience in treating heart conditions.</p>
+              <p>Dr. Rachel Bacon is a leading cardiologist with over 20 years of experience in treating heart
+                conditions.</p>
             </div>
           </div>
         </div>
@@ -132,7 +133,8 @@
             <div class="card-content">
               <span class="card-title">Dr. Emily Johnson</span>
               <p>Specialty: Pediatrics</p>
-              <p>Dr. Emily Johnson is an expert in treating bone and joint issues and offers personalized care for each patient.
+              <p>Dr. Emily Johnson is an expert in treating bone and joint issues and offers personalized care for each
+                patient.
               </p>
             </div>
           </div>
@@ -164,6 +166,16 @@
   <!-- Linking Materialize JS and jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io(); // Connect to the server
+
+    // Listen for the `newAppointment` event
+    socket.on('newAppointment', (data) => {
+      alert(data.message);
+      console.log('New Appointment Details:', data.appointment);
+    });
+  </script>
 
   <!-- Initialize Materialize JS components -->
   <script>
